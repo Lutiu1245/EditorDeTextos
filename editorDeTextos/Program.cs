@@ -12,6 +12,7 @@
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Abrir arquivo");
             Console.WriteLine("2 - Criar arquivo");
+            Console.WriteLine("3 - Deletar arquivo");
             Console.WriteLine("0 - Sair");
             short opcao = short.Parse(Console.ReadLine());
 
@@ -25,6 +26,9 @@
                     break;
                 case 2:
                     Editar();
+                    break;
+                case 3:
+                    Deletar();
                     break;
                 default:
                     break;
@@ -68,6 +72,15 @@
                 arquivo.Write(texto);
             }
             Console.WriteLine($"Arquivo {caminho} salvo com sucesso!");
+            Menu();
+        }
+        static void Deletar()
+        {
+            Console.Clear();
+            Console.WriteLine("Qual o caminho do arquivo?");
+            string caminho = Console.ReadLine();
+            File.Delete(caminho);
+            Console.WriteLine("Arquivo deletado com sucesso!");
             Menu();
         }
     }
