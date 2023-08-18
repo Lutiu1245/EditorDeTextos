@@ -40,6 +40,9 @@
                 string texto = arquivo.ReadToEnd();
                 Console.WriteLine(texto);
             }
+            Console.WriteLine("");
+            Console.ReadLine();
+            Menu();
         }
         static void Editar()
         {
